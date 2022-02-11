@@ -22,6 +22,7 @@ int main(int argc, char *argv[]){
             A[i][j] = R1 * (size - j) / size + R2 * j / size;
         }
 
+    //!$acc data copy(A) create(Anew)
     int iter = 0;
     double err = 1;
     double Anew[size][size];
@@ -30,6 +31,7 @@ int main(int argc, char *argv[]){
         iter++;
         err = 0;
 
+        //!$acc kernels
         for (int j = 1; j < size; j++)
             for (int i = 1; i < size; i++){
                 Anew[i][j] = 0.25 * (A[i+1][j] + A[i-1][j] + A[i][j-1] + A[i][j+1]);
@@ -39,9 +41,11 @@ int main(int argc, char *argv[]){
         for (int i = 0; i < size; i++)
             for (int j = 0; j < size; j++)
                 A[i][j] = Anew[i][j];
+        //!$acc end kernels
 
         if ((iter % 100 == 0) || (iter == 1))
             cout << iter << ' ' << err << endl;
     }
+    //!$acc end data
     return 0;
 }
