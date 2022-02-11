@@ -17,8 +17,8 @@ int main(int argc, char *argv[]){
     double A[size][size];
     for (int i = 0; i < size; i++)
         for (int j = 0; j < size; j++){
-            double R1 = Q11 * (size - i) / size + Q21 * (i - size) / size;
-            double R2 = Q12 * (size - i) / size + Q22 * (i - size) / size;
+            double R1 = Q11 * (size - i) / size + Q21 * i / size;
+            double R2 = Q12 * (size - i) / size + Q22 * i / size;
             A[i][j] = R1 * (size - j) / size + R2 * j / size;
         }
 
