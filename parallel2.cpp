@@ -65,12 +65,13 @@ int main(int argc, char *argv[]){
 
         #pragma acc kernels
     {
+        #pragma acc loop independent collapse(2) reduction(max:err)
         for (int j = 1; j < size + 1; j++)
             for (int i = 1; i < size + 1; i++){
                 Anew[i][j] = 0.25 * (A[i+1][j] + A[i-1][j] + A[i][j-1] + A[i][j+1]);
                 err = max(err, Anew[i][j] - A[i][j]);
             }
-        
+        #pragma acc loop independent collapse(2)
         for (int i = 1; i < size + 1; i++)
             for (int j = 1; j < size + 1; j++)
                 A[i][j] = Anew[i][j];
