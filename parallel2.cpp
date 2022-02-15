@@ -47,13 +47,13 @@ int main(int argc, char *argv[]){
 
     // end
 
-    for (int i = 0; i < size + 2; i++){
-        for (int j = 0; j < size + 2; j++)
-            cout << A[i][j] << ' ';
-        cout << endl;
-    }
+    // for (int i = 0; i < size + 2; i++){
+    //     for (int j = 0; j < size + 2; j++)
+    //         cout << A[i][j] << ' ';
+    //     cout << endl;
+    // }
     
-    double Anew[size][size];
+    double Anew[size+2][size+2];
     int iter = 0;
     double err = 1;
 
@@ -73,10 +73,10 @@ int main(int argc, char *argv[]){
         
         for (int i = 1; i < size + 1; i++)
             for (int j = 1; j < size + 1; j++)
-                A[i][j] = Anew[i-1][j-1];
+                A[i][j] = Anew[i][j];
     }
 
-        if ((iter % 10000 == 0) || (iter == 1))
+        if ((iter % 100 == 0) || (iter == 1))
             cout << iter << ' ' << err << endl;
     }
     }
