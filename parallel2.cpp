@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void print(double** A, int size){
+void print(double**& A, int size){
     for (int i = 0; i < size; i++){
         for (int j = 0; j < size; j++)
             cout << A[i][j] << ' ';
@@ -57,12 +57,6 @@ int main(int argc, char *argv[]){
             Anew[i][j] = A[i][j];
 
     // end
-
-    // for (int i = 0; i < size + 2; i++){
-    //     for (int j = 0; j < size + 2; j++)
-    //         cout << A[i][j] << ' ';
-    //     cout << endl;
-    // }
     
     
     int iter = 0;
@@ -73,16 +67,13 @@ int main(int argc, char *argv[]){
     while ((err > accuracy) && (iter < iters)){
         iter++;
         #pragma acc kernels
+        {
         err = 0;
-
-        #pragma acc kernels
-    {
         #pragma acc loop independent collapse(2)
         for (int j = 1; j < size + 1; j++)
-            for (int i = 1; i < size + 1; i++){
+            for (int i = 1; i < size + 1; i++)
                 Anew[i][j] = 0.25 * (A[i+1][j] + A[i-1][j] + A[i][j-1] + A[i][j+1]);
 
-            }
         #pragma acc loop independent collapse(2) reduction(max:err)
         for (int j = 1; j < size + 1; j++)
             for (int i = 1; i < size + 1; i++){
@@ -90,7 +81,7 @@ int main(int argc, char *argv[]){
                 err = max(err, Anew[i][j] - A[i][j]);
             }
         
-    }
+        }
 
         if ((iter % 100 == 0) || (iter == 1))
             #pragma acc update self(err)
