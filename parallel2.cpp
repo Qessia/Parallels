@@ -3,14 +3,6 @@
 
 using namespace std;
 
-void print(double** A, int size){
-    for (int i = 0; i < size; i++){
-        for (int j = 0; j < size; j++)
-            cout << A[i][j] << ' ';
-        cout << endl;
-    }
-}
-
 int main(int argc, char *argv[]){
     double accuracy = atof(argv[1]); //argv[1] - accuracy
     int size = strtol(argv[2], NULL, 10); //argv[2] - size
@@ -31,7 +23,7 @@ int main(int argc, char *argv[]){
     A[size+1][0] = Q21;
     A[size+1][size+1] = Q22;
 
-    #pragma acc parallel
+    #pragma acc parallel // using pragma parallel while fulfilling initial matrix
     {
     for (int i = 1; i < size + 1; i++){
         A[0][i] = A[0][i-1] + step;
@@ -53,16 +45,16 @@ int main(int argc, char *argv[]){
     int iter = 0;
     double err = 1;
 
-    #pragma acc data copy(A) create(Anew, err)
+    #pragma acc data copy(A) create(Anew, err) // here we copy array A to GPU and create Anew, err on GPU
     {
     while ((err > accuracy) && (iter < iters)){
         iter++;
         
-        if ((iter % 100 == 0) || (iter == 1)){
-            #pragma acc kernels async(1)
+        if ((iter % 100 == 0) || (iter == 1)){ // every 100 iterations we nullify error and compute it
+            #pragma acc kernels async(1) // asynchronous computations on a new thread
             {
             err = 0;
-            #pragma acc loop independent collapse(2) reduction(max:err)
+            #pragma acc loop independent collapse(2) reduction(max:err) // collapsing double for into one
             for (int j = 1; j < size + 1; j++)
                 for (int i = 1; i < size + 1; i++){
                     Anew[i][j] = 0.25 * (A[i+1][j] + A[i-1][j] + A[i][j-1] + A[i][j+1]);
@@ -79,14 +71,14 @@ int main(int argc, char *argv[]){
                 }
 
         }
-        #pragma acc kernels async(1)
+        #pragma acc kernels async(1) // updating matrix
         for (int i = 1; i < size + 1; i++)
             for (int j = 1; j < size + 1; j++)
                 A[i][j] = Anew[i][j];
 
-        if ((iter % 100 == 0) || (iter == 1)){
-            #pragma acc wait(1)
-            #pragma acc update self(err)
+        if ((iter % 100 == 0) || (iter == 1)){ // every 100 iterations:
+            #pragma acc wait(1) // synchronizing all threads
+            #pragma acc update self(err) // updating error value on CPU
             cout << iter << ' ' << err << endl;
         }
     }
@@ -96,3 +88,24 @@ int main(int argc, char *argv[]){
 
     return 0;
 }
+
+// Computations result:
+
+/*
+
+
++===============+======+=======+========+=======+
+|       N       | 128  |  256  |  512   | 1024  |
++===============+======+=======+========+=======+
+| GPU           | 1.3s | 4s    | 15.16s | 1m42s |
++---------------+------+-------+--------+-------+
+| CPU           | 5.5s | 1m13s |        |       |
++---------------+------+-------+--------+-------+
+| GPU+OpenACC   | 0.4s | 0.9s  | 3.9s   | 52s   |
++---------------+------+-------+--------+-------+
+| CPU+OpenACC   | 4.4s | 1m    |        |       |
++---------------+------+-------+--------+-------+
+| CPU Multicore | 2.3s | 14.8s | 2m21s  |       |
++---------------+------+-------+--------+-------+
+
+*/
