@@ -1,0 +1,644 @@
+    1  nvidia-sml
+    2  nvidia-smi
+    3  nano
+    4  nao
+    5  nano
+    6  joe
+    7  vim
+    8  ls
+    9  gcc parallel1.c
+   10  gcc -lm parallel1.c
+   11  gcc parallel1.c -lm
+   12  ls
+   13  ./a.out
+   14  vim parallel.c
+   15  ls
+   16  vim parallel1.c
+   17  gcc parallel1.c -lm
+   18  ./a.out
+   19  vim parallel1.c
+   20  pgcc -acc -Minfo=accel parallel1.c
+   21  who
+   22  wall "Nu kak tam s parallelizmom"
+   23  pgcc -acc -Minfo=accel parallel1.c
+   24  vim parallel1.c
+   25  ./a.out
+   26  vim parallel1.c
+   27  pgcc -acc -Minfo=accel parallel1.c
+   28  vim parallel1.c 
+   29  pgcc -acc -Minfo=accel parallel1.c
+   30  ./a.out 
+   31  pgcc parallel1.c
+   32  ./a.out 
+   33  gcc parallel1.c -lm
+   34  ./a.out 
+   35  vim parallel1.c 
+   36  PGI_ACC_TIME=1 ./a.out
+   37  PGI_ACC_TIME=1./a.out
+   38  pgcc -acc -Minfo=accel parallel1.c
+   39  PGI_ACC_TIME=1 ./a.out
+   40  vim parallel1.c
+   41  pgcc -acc -Minfo=accel parallel1.c
+   42  vim parallel1.c
+   43  history
+   44  vim parallel1.c
+   45  pgcc -acc -Minfo=accel parallel1.c
+   46  PGI_ACC_TIME=1 ./a.out
+   47  vim parallel1.c 
+   48  history
+   49  vim parallel1.c 
+   50  pgcc -acc -Minfo=accel parallel1.c
+   51  vim parallel1.c 
+   52  pgcc -acc -Minfo=accel parallel1.c
+   53  vim parallel1.c 
+   54  pgcc -acc -Minfo=accel parallel1.c
+   55  time ./a.out
+   56  pgcc parallel1.c
+   57  time ./a.out
+   58  vim parallel1.c 
+   59  ./a.out
+   60  pgcc -acc -ta=multicore parallel1.c
+   61  ./a.out
+   62  time ./a.out
+   63  who
+   64  nvidia-smi
+   65  who
+   66  whoami
+   67  who
+   68  pgcc -acc -Minfo=accel parallel1.c 
+   69  ./a.out
+   70  time ./a.out
+   71  g++ parallel2.cpp 
+   72  g++ parallel2.cpp -lm
+   73  g++ parallel2.cpp
+   74  ls
+   75  a.out
+   76  ./a.out 
+   77  g++ parallel2.cpp -o ./a.out 12
+   78  g++ parallel2.cpp -o ./a.out
+   79  g++ parallel2.cpp -o a.out
+   80  g++ parallel2.cpp -o parallel2
+   81  ls
+   82  parallel2
+   83  ./parallel2 
+   84  ./parallel2 12
+   85  g++ parallel2.cpp -o parallel2
+   86  ./parallel2 128 0.000001 1000000
+   87  g++ parallel2.cpp -o parallel2
+   88   1000000
+   89  g++ parallel2.cpp -o parallel2
+   90  ./parallel2 0.000001 128 1000000
+   91  who
+   92  g++ parallel2.cpp -o parallel2
+   93  ./parallel2 0.000001 128 1000000
+   94  g++ parallel2.cpp -o parallel2
+   95  ./parallel2 0.000001 128 1000000
+   96  git config --global user.name "Timur Gayazov"
+   97  git config --global user.email timurgayazovfw@gmail.com
+   98  mkdir parallel
+   99  cd parallel
+  100  git init
+  101  git add parallel1.c
+  102  git add parallel2.cpp
+  103  git commit
+  104  git commit -m "Added 1st and 2nd tasks"
+  105  git remote add parallel
+  106  git remote add parallel https://github.com/Qessia/parallel
+  107  git push parallel master
+  108  git remote add parallel https://github.com/Qessia/Parallels
+  109  git status
+  110  git remote add prl https://github.com/Qessia/Parallels
+  111  git push prl master
+  112  who
+  113  whoami
+  114  cd ..
+  115  ls
+  116  cd p.polovinko/
+  117  ls
+  118  cd teor_paral/
+  119  ls
+  120  cat main.cpp
+  121  cd ..
+  122  cd m.chuprov/
+  123  ls
+  124  cd ..
+  125  ls
+  126  cd a.karmanova/
+  127  ls
+  128  cd ..
+  129  cd admin/
+  130  ls
+  131  cd ..
+  132  cd arom/
+  133  ls
+  134  cd MOST/
+  135  ls
+  136  cd ..
+  137  ls
+  138  cd home/
+  139  ls
+  140  cd
+  141  ls
+  142  who
+  143  whoami
+  144  history
+  145  ls
+  146  cd parallel
+  147  ls
+  148  g++ parallel2.cpp -o parallel2
+  149  ./parallel2 0.01 20 100
+  150  ls
+  151  g++ parallel2.cpp -o parallel2
+  152  ./parallel2 0.01 20 100
+  153  ./parallel2 0.01 10 100
+  154  g++ parallel2.cpp -o parallel2
+  155  ./parallel2 0.01 10 100
+  156  ./parallel2 0.01 20 100
+  157  ./parallel2 0.01 10 100
+  158  ./parallel2 0.01 30 100
+  159  g++ parallel2.cpp -o parallel2
+  160  ./parallel2 0.000001 128 1000000
+  161  $ git commit
+  162  git commit -m "Quite working code"
+  163  git commit
+  164  git add parallel2.cpp 
+  165  git commit -m "Quite working code"
+  166  git push
+  167  git push prl master
+  168  ./parallel2 0.000001 1024 1000000
+  169  ./parallel2 0.000001 128 1000000
+  170  ./parallel2 0.000001 256 1000000
+  171  ./parallel2 0.000001 512 1000000
+  172  ./parallel2 0.000001 1024 1000000
+  173  g++ parallel2.cpp -o parallel2
+  174  ./parallel2 0.000001 1024 1000000
+  175  ./parallel2 0.000001 256 1000000
+  176  ./parallel2 0.000001 512 1000000
+  177  ./parallel2 0.000001 128 1000000
+  178  g++ parallel2.cpp -o parallel2
+  179  ./parallel2 0.000001 256 1000000
+  180  ./parallel2 0.000001 128 1000000
+  181  pgcc parallel2.cpp -o parallel2
+  182  pg++ parallel2.cpp -o parallel2
+  183  module load pgi/19.4
+  184  pgCC parallel2.cpp -o parallel2
+  185  man pgcc
+  186  man
+  187  pgcc
+  188  pgCC
+  189  git add parallel2.cpp
+  190  git commit -m "?"
+  191  git push prl master
+  192  pgc++
+  193  cd parallel
+  194  pgc++ parallel2.cpp -o parallel2
+  195  ./parallel2 0.000001 128 1000000
+  196  ./parallel2 0.000001 256 1000000
+  197  ./parallel2 0.000001 512 1000000
+  198  g++ parallel2.cpp -o parallel2
+  199  ./parallel2 0.000001 512 1000000
+  200  ./parallel2 0.000001 256 1000000
+  201  who
+  202  pg++ -acc -Minfo=accel parallel2.cpp -o parallel2
+  203  pgc++ -acc -Minfo=accel parallel2.cpp -o parallel2
+  204  cd parallel
+  205  pgc++ -acc -Minfo=accel parallel2.cpp -o parallel2
+  206  ./parallel2 0.000001 512 1000000
+  207  who
+  208  whoami
+  209  ls
+  210  cd parallel
+  211  ls
+  212  who
+  213  pgc++ parallel2.cpp -o parallel2
+  214  ./parallel2 0.000001 10 1000000
+  215  pgc++ parallel2.cpp -o parallel2
+  216  ./parallel2 0.000001 10 1000000
+  217  pgc++ parallel2.cpp -o parallel2
+  218  ./parallel2 0.000001 10 1000000
+  219  pgc++ parallel2.cpp -o parallel2
+  220  ./parallel2 0.000001 10 1000000
+  221  pgc++ parallel2.cpp -o parallel2
+  222  ./parallel2 0.000001 10 1000000
+  223  ./parallel2 0.000001 20 1000000
+  224  pgc++ parallel2.cpp -o parallel2
+  225  ./parallel2 0.000001 128 1000000
+  226  ./parallel2 0.000001 10 1000000
+  227  ./parallel2 0.000001 11 1000000
+  228  ./parallel2 0.000001 10 1000000
+  229  pgc++ parallel2.cpp -o parallel2
+  230  ./parallel2 0.000001 10 1000000
+  231  ./parallel2 0.000001 6 1000000
+  232  ./parallel2 0.000001 5 1000000
+  233  ./parallel2 0.000001 7 1000000
+  234  ./parallel2 0.000001 5 1000000
+  235  ./parallel2 0.000001 6 1000000
+  236  pgc++ parallel2.cpp -o parallel2
+  237  ./parallel2 0.000001 6 1000000
+  238  ./parallel2 0.000001 5 1000000
+  239  pgc++ parallel2.cpp -o parallel2
+  240  ./parallel2 0.000001 128 1000000
+  241  ./parallel2 0.000001 12 1000000
+  242  ./parallel2 0.000001 10 1000000
+  243  pgc++ parallel2.cpp -o parallel2
+  244  ./parallel2 0.000001 128 1000000
+  245  ./parallel2 0.000001 256 1000000
+  246  ./parallel2 0.000001 512 1000000
+  247  pgc++ parallel2.cpp -o parallel2
+  248  ./parallel2 0.000001 128 1000000
+  249  ./parallel2 0.000001 256 1000000
+  250  ./parallel2 0.000001 512 1000000
+  251  pgc++ parallel2.cpp -o parallel2
+  252  ./parallel2 0.000001 10 1000000
+  253  pgc++ parallel2.cpp -o parallel2
+  254  ./parallel2 0.000001 10 1000000
+  255  pgc++ parallel2.cpp -o parallel2
+  256  ./parallel2 0.000001 128 1000000
+  257  pgc++ parallel2.cpp -o parallel2
+  258  ./parallel2 0.000001 12 1000000
+  259  pgc++ parallel2.cpp -o parallel2
+  260  ./parallel2 0.000001 12 1000000
+  261  pgc++ parallel2.cpp -o parallel2
+  262  ./parallel2 0.000001 128 1000000
+  263  pgc++ parallel2.cpp -o parallel2
+  264  ./parallel2 0.000001 128 1000000
+  265  pgc++ parallel2.cpp -o parallel2
+  266  ./parallel2 0.000001 128 1000000
+  267  git add parallel2.cpp
+  268  git commit -m "CPU, wrong"
+  269  git push prl master
+  270  pgc++ parallel2.cpp -o parallel2
+  271  ./parallel2 0.000001 128 1000000
+  272  pgc++ parallel2.cpp -o parallel2
+  273  ./parallel2 0.000001 128 1000000
+  274  git add parallel2.cpp
+  275  git commit -m "WORKING"
+  276  git push prl master
+  277  time ./parallel2 0.000001 128 1000000
+  278  pgc++ -acc -Minfo=accel parallel2.cpp -o parallel2
+  279  time ./parallel2 0.000001 128 1000000
+  280  CUDA_visible_devices=3 time ./parallel2 0.000001 128 1000000
+  281  CUDA_VISIBLE_DEVICES=3 time ./parallel2 0.000001 128 1000000
+  282  pgc++ -acc -Minfo=accel parallel2.cpp -o parallel2
+  283  time ./parallel2 0.000001 128 1000000
+  284  time ./parallel2 0.000001 256 1000000
+  285  time ./parallel2 0.000001 512 1000000
+  286  time ./parallel2 0.000001 1024 1000000
+  287  ulimit -s unlimited
+  288  time ./parallel2 0.000001 1024 1000000
+  289  pgc++ parallel2.cpp -o parallel2
+  290  time ./parallel2 0.000001 128 1000000
+  291  time ./parallel2 0.000001 256 1000000
+  292  nsys profile -o parallel2.cpp -t openacc,cuda ./parallel2 0.000001 128 10
+  293  pgc++ -acc -Minfo=accel parallel2.cpp -o parallel2
+  294  nsys profile -o parallel2.cpp -t openacc,cuda ./parallel2 0.000001 128 10
+  295  pgc++ -acc -Minfo=accel parallel2.cpp -o parallel2
+  296  nsys profile -o parallel2.cpp -t openacc,cuda -f true ./parallel2 0.000001 128 10
+  297  git branch optimized
+  298  git checkout optimized
+  299  pgc++ -acc -Minfo=accel parallel2.cpp -o parallel2
+  300  time ./parallel2 0.000001 128 1000000
+  301  pgc++ -acc -Minfo=accel parallel2.cpp -o parallel2
+  302  time ./parallel2 0.000001 128 1000000
+  303  pgc++ parallel2.cpp -o parallel2
+  304  time ./parallel2 0.000001 128 1000000
+  305  pgc++ -acc -Minfo=accel parallel2.cpp -o parallel2
+  306  time ./parallel2 0.000001 128 1000000
+  307  pgc++ -acc -Minfo=accel parallel2.cpp -o parallel2
+  308  time ./parallel2 0.000001 128 1000000
+  309  pgc++ -acc -Minfo=accel parallel2.cpp -o parallel2
+  310  pgc++ parallel2.cpp -o parallel2
+  311  time ./parallel2 0.000001 128 1000000
+  312  git status
+  313  git checkout -- parallel2.cpp
+  314  git checkout master
+  315  git pull
+  316  git pull prl master
+  317  pgc++ -acc -Minfo=accel parallel2.cpp -o parallel2
+  318  time ./parallel2 0.000001 128 1000000
+  319  git add parallel2.cpp
+  320  git commit -m "newest"
+  321  git push prl master
+  322  pgc++ -acc -Minfo=accel parallel2.cpp -o parallel2
+  323  time ./parallel2 0.000001 128 1000000
+  324  nsys profile -o parallel2.cpp -t openacc,cuda -f true ./parallel2 0.000001 128 10
+  325  pgc++ -acc -Minfo=accel parallel2.cpp -o parallel2
+  326  time ./parallel2 0.000001 128 1000000
+  327  pgc++ -acc -Minfo=accel parallel2.cpp -o parallel2
+  328  time ./parallel2 0.000001 128 1000000
+  329  git status
+  330  git branch
+  331  git switch optimized
+  332  git --help
+  333  git checkout optimized
+  334  git status
+  335  git add parallel2.cpp
+  336  git commit -m "Trying to optimize"
+  337  git push prl optimized
+  338  git checkout o
+  339  git --help
+  340  git status
+  341  git --help
+  342  git pull
+  343  who
+  344  whoami
+  345  pgc++ -acc -Minfo=accel parallel2.cpp -o parallel2
+  346  ./parallel2 
+  347  time ./parallel2 0.000001 128 1000000
+  348  pgc++ parallel2.cpp -o parallel2
+  349  time ./parallel2 0.000001 128 1000000
+  350  cd ..
+  351  ls
+  352  pgc++ -acc -Minfo=accel parallel2.cpp -o parallel2
+  353  cd t.gayazov/
+  354  cd parallel
+  355  pgc++ -acc -Minfo=accel parallel2.cpp -o parallel2
+  356  time ./parallel2 0.000001 128 1000000
+  357  pgc++ -acc -Minfo=accel parallel2.cpp -o parallel2
+  358  time ./parallel2 0.000001 128 1000000
+  359  pgc++ -acc -Minfo=accel parallel2.cpp -o parallel2
+  360  time ./parallel2 0.000001 128 1000000
+  361  pgc++ -acc -Minfo=accel parallel2.cpp -o parallel2
+  362  time ./parallel2 0.000001 128 1000000
+  363  pgc++ -acc -Minfo=accel parallel2.cpp -o parallel2
+  364  time ./parallel2 0.000001 128 1000000
+  365  git status
+  366  git checkout
+  367  git checkout optimized
+  368  git add parallel2.cpp
+  369  git commit -m "doesn't work"
+  370  git push prl optimized
+  371  git checkout optimized
+  372  git checkout master
+  373  pgc++ -acc -Minfo=accel parallel2.cpp -o parallel2
+  374  time ./parallel2 0.000001 128 1000000
+  375  git add parallel2.cpp
+  376  git status
+  377  git commit -m "works"
+  378  git push prl master
+  379  git checkout optimized
+  380  git status
+  381  pgc++ -acc -Minfo=accel parallel2.cpp -o parallel2
+  382  time ./parallel2 0.000001 128 1000000
+  383  pgc++ -acc -Minfo=accel parallel2.cpp -o parallel2
+  384  ./parallel2 0.000001 128 1000000
+  385  time ./parallel2 0.000001 128 1000000
+  386  man wall
+  387  man
+  388  pgc++ parallel2.cpp -o parallel2
+  389  time ./parallel2 0.000001 128 1000000
+  390  nsys profile -o parallel2.cpp -t openacc, cuda ./parallel2 0.000001 128 10
+  391  nsys profile -o parallel2.cpp -t openacc,cuda ./parallel2 0.000001 128 10
+  392  nsys profile -o report -t openacc,cuda ./parallel2 0.000001 128 10
+  393  pgc++ -acc -Minfo=accel parallel2.cpp -o parallel2
+  394  nsys profile -o report -t openacc,cuda ./parallel2 0.000001 128 10
+  395  pgc++ -acc -Minfo=accel parallel2.cpp -o parallel2
+  396  nsys profile -o report -t openacc,cuda ./parallel2 0.000001 128 10
+  397  nsys profile -o report -t openacc,cuda --force-overwrite true ./parallel2 0.000001 128 10
+  398  pgc++ -acc parallel2.cpp -o parallel2
+  399  nsys profile -o report -t openacc,cuda --force-overwrite true ./parallel2 0.000001 128 10
+  400  pgc++ -acc parallel2.cpp -o parallel2
+  401  time ./parallel2 0.000001 128 1000000
+  402  pgc++ -acc parallel2.cpp -o parallel2
+  403  time ./parallel2 0.000001 128 1000000
+  404  pgc++ -acc parallel2.cpp -o parallel2
+  405  time ./parallel2 0.000001 128 1000000
+  406  pgc++ -acc parallel2.cpp -o parallel2
+  407  time ./parallel2 0.000001 128 1000000
+  408  pgc++ -acc parallel2.cpp -o parallel2
+  409  time ./parallel2 0.000001 128 1000000
+  410  pgc++ -acc parallel2.cpp -o parallel2
+  411  time ./parallel2 0.000001 128 1000000
+  412  nsys profile -o optimized -t openacc,cuda --force-overwrite true ./parallel2 0.000001 128 10
+  413  pgc++ -acc parallel2.cpp -o parallel2
+  414  time ./parallel2 0.000001 128 1000000
+  415  time ./parallel2 0.000001 256 1000000
+  416  time ./parallel2 0.000001 512 1000000
+  417  time ./parallel2 0.000001 1024 1000000
+  418  ulimit -s unlimited
+  419  time ./parallel2 0.000001 1024 1000000
+  420  time ./parallel2 0.000001 512 1000000
+  421  time ./parallel2 0.000001 256 1000000
+  422  time ./parallel2 0.000001 128 1000000
+  423  pgc++ parallel2.cpp -o parallel2
+  424  time ./parallel2 0.000001 128 1000000
+  425  time ./parallel2 0.000001 256 1000000
+  426  pgc++ -ta=multicore -acc parallel2.cpp -o parallel2
+  427  time ./parallel2 0.000001 128 1000000
+  428  time ./parallel2 0.000001 256 1000000
+  429  cat /proc/cpuinfo
+  430  history
+  431  CUDA_VISIBLE_DEVICES=3
+  432  pgc++ -acc parallel2.cpp -o parallel2
+  433  CUDA_VISIBLE_DEVICES=2
+  434  pgc++ -ta=multicore -acc parallel2.cpp -o parallel2
+  435  time ./parallel2 0.000001 256 1000000
+  436  time ./parallel2 0.000001 128 1000000
+  437  OMP_NUM_THREADS=10
+  438  time ./parallel2 0.000001 128 1000000
+  439  OMP_NUM_THREADS=20
+  440  time ./parallel2 0.000001 128 1000000
+  441  OMP_NUM_THREADS=40
+  442  time ./parallel2 0.000001 128 1000000
+  443  OMP_NUM_THREADS=80
+  444  time ./parallel2 0.000001 128 1000000
+  445  OMP_NUM_THREADS=40
+  446  time ./parallel2 0.000001 128 1000000
+  447  pgc++ -ta=multicore -acc parallel2.cpp -o parallel2
+  448  OMP_NUM_THREADS=10 time ./parallel2 0.000001 128 1000000
+  449  time OMP_NUM_THREADS=10 ./parallel2 0.000001 128 1000000
+  450  time OMP_NUM_THREADS=20 ./parallel2 0.000001 128 1000000
+  451  time OMP_NUM_THREADS=40 ./parallel2 0.000001 128 1000000
+  452  time OMP_NUM_THREADS=80 ./parallel2 0.000001 128 1000000
+  453  time ./parallel2 0.000001 128 1000000
+  454  pgc++ -acc parallel2.cpp -o parallel2
+  455  time ./parallel2 0.000001 128 1000000
+  456  pgc++ -ta=multicore -acc parallel2.cpp -o parallel2
+  457  time OMP_NUM_THREADS=10 ./parallel2 0.000001 128 1000000
+  458  time OMP_NUM_THREADS=20 ./parallel2 0.000001 128 1000000
+  459  time OMP_NUM_THREADS=40 ./parallel2 0.000001 128 1000000
+  460  time OMP_NUM_THREADS=80 ./parallel2 0.000001 128 1000000
+  461  time OMP_NUM_THREADS=80 ./parallel2 0.000001 256 1000000
+  462  time OMP_NUM_THREADS=40 ./parallel2 0.000001 256 1000000
+  463  time OMP_NUM_THREADS=20 ./parallel2 0.000001 256 1000000
+  464  pgc++ -acc parallel2.cpp -o parallel2
+  465  time ./parallel2 0.000001 128 1000000
+  466  git status
+  467  git add parallel2.cpp
+  468  git commit -m "Task complete"
+  469  git push prl optimized
+  470  time ./parallel2 0.000001 128 1000000
+  471  ncu --list-sections
+  472  ncu --sections #include <iostream>
+  473  #include <stdlib.h>
+  474  using namespace std;
+  475  void print(double** A, int size){
+  476  ncu --section MemoryWorkloadAnalysis_Chart ./parallel2 0.000001 128 1000000
+  477  ncu --section MemoryWorkloadAnalysis_Chart ./parallel2 0.000001 128 10
+  478  pgc++ -acc parallel2.cpp -o parallel2
+  479  ncu --section MemoryWorkloadAnalysis_Chart ./parallel2 0.000001 128 10
+  480  who
+  481  cd parallel
+  482  cd ..
+  483  nano
+  484  mkdir gittest
+  485  cd gittest
+  486  ls
+  487  python
+  488  ls
+  489  nano
+  490  ls
+  491  git init
+  492  git status
+  493  git add text.txt
+  494  ls
+  495  git status
+  496  git checkout -b new
+  497  nano text.txt
+  498  ls
+  499  nano text.txt
+  500  git commit -m "added new string"
+  501  git remote add test https://github.com/Qessia/test
+  502  git push
+  503  git push test new
+  504  who
+  505  git status
+  506  git commit -m "For check"
+  507  git commit -a -m "For check"
+  508  git push
+  509  git push prl optimized
+  510  git config --global user.name "Timur Gayazov"
+  511  git config --global user.email timurgayazovfw@gmail.com
+  512  git push prl optimized
+  513  git
+  514  git status
+  515  git push
+  516  git checkout master
+  517  git checkout optimized
+  518  git remote add prl https://github.com/Qessia/Parallels
+  519  git push prl
+  520  git push --set-upstream prl optimized
+  521  who
+  522  write
+  523  who
+  524  git checkout -b cublas
+  525  history
+  526  who
+  527  write d.nodezhdina pts/10 hello
+  528  man write
+  529  write d.nodezhdina pts/10
+  530  mesg
+  531  write d.nodezhdina pts/10
+  532  git checkout optimized
+  533  git checkout cublas
+  534  git checkout optimized
+  535  git checkout cublas
+  536  who
+  537  size
+  538  size parallel2
+  539  cd ..
+  540  ls
+  541  size n.korneich/
+  542  cd n.korneich/
+  543  ls
+  544  cd parallelCourse/
+  545  ls
+  546  cd parallelProgramming/
+  547  ls
+  548  cd par3
+  549  ls
+  550  cd ..
+  551  ls
+  552  cd ..
+  553  ls
+  554  cd srv
+  555  ls
+  556  cd ..
+  557  cd usr/
+  558  ls
+  559  cd games/
+  560  ls
+  561  cd ..
+  562  cd home
+  563  cd
+  564  ls
+  565  cd ..
+  566  ls
+  567  cd t.gayazov/
+  568  ls
+  569  cd parallel
+  570  ls
+  571  pgc++ -acc -cudalib=cublas parallel2.cpp -o parallel2
+  572  history
+  573  pgc++ -acc -cudalib=cublas parallel2.cpp -o parallel2
+  574  who
+  575  cd ..
+  576  ls
+  577  cd ..
+  578  ls
+  579  cd /opt/
+  580  ls
+  581  cd nvidia/hpc_sdk
+  582  cd Linux_x86_64/21.11/math_libs/11.5/targets/x86_64-linux/include/
+  583  ls
+  584  cd ~
+  585  ls
+  586  cd parallel
+  587  pgc++ -acc -cudalib=cublas parallel2.cpp -o parallel2
+  588  time ./parallel2 0.000001 128 1000000
+  589  pgc++ parallel2.cpp -o parallel2
+  590  pgc++ -acc -cudalib=cublas parallel2.cpp -o parallel2
+  591  time ./parallel2 0.000001 128 1000000
+  592  pgc++ -acc -cudalib=cublas parallel2.cpp -o parallel2
+  593  time ./parallel2 0.000001 128 1000000
+  594  history
+  595  pgc++ -acc -cudalib=cublas parallel2.cpp -o parallel2
+  596  cd parallel
+  597  pgc++ -acc -cudalib=cublas parallel2.cpp -o parallel2
+  598  cd ..
+  599  cd /opt/nvidia/hpc_sdk/Linux_x86_64/21.11/math_libs/11.5/targets/x86_64-linux/include/
+  600  ls
+  601  where cuda_runtime.h
+  602  wher cuda_runtime.h
+  603  who
+  604  cd ~
+  605  ls
+  606  cd parallel
+  607  pgc++ -acc -cudalib=cublas parallel2.cpp -o parallel2
+  608  time ./parallel2 0.000001 128 1000000
+  609  pgc++ -acc -cudalib=cublas parallel2.cpp -o parallel2
+  610  time ./parallel2 0.000001 128 1000000
+  611  pgc++ -acc -cudalib=cublas parallel2.cpp -o parallel2
+  612  time ./parallel2 0.000001 128 1000000
+  613  pgc++ -acc -cudalib=cublas parallel2.cpp -o parallel2
+  614  time ./parallel2 0.000001 128 1000000
+  615  pgc++ -acc -cudalib=cublas parallel2.cpp -o parallel2
+  616  time ./parallel2 0.000001 128 1000000
+  617  pgc++ -acc -cudalib=cublas parallel2.cpp -o parallel2
+  618  time ./parallel2 0.000001 128 1000000
+  619  pgc++ -acc -cudalib=cublas parallel2.cpp -o parallel2
+  620  time ./parallel2 0.000001 128 1000000
+  621  time ./parallel2 0.000001 12 1000000
+  622  pgc++ -cudalib=cublas parallel2.cpp -o parallel2
+  623  time ./parallel2 0.000001 128 1000000
+  624  pgc++ -cudalib=cublas parallel2.cpp -o parallel2
+  625  pgc++ -acc -cudalib=cublas parallel2.cpp -o parallel2
+  626  time ./parallel2 0.000001 128 1000000
+  627  pgc++ -acc -cudalib=cublas parallel2.cpp -o parallel2
+  628  time ./parallel2 0.000001 128 1000000
+  629  pgc++ -acc -Minfo=accel -cudalib=cublas parallel2.cpp -o parallel2
+  630  time ./parallel2 0.000001 128 1000000
+  631  pgc++ -acc -Minfo=accel -cudalib=cublas parallel2.cpp -o parallel2
+  632  time ./parallel2 0.000001 128 1000000
+  633  pgc++ -acc -Minfo=accel -cudalib=cublas parallel2.cpp -o parallel2
+  634  time ./parallel2 0.000001 128 1000000
+  635  pgc++ -acc -Minfo=accel -cudalib=cublas parallel2.cpp -o parallel2
+  636  time ./parallel2 0.000001 128 1000000
+  637  pgc++ -acc -Minfo=accel -cudalib=cublas parallel2.cpp -o parallel2
+  638  time ./parallel2 0.000001 128 1000000
+  639  pgc++ -acc -Minfo=accel -cudalib=cublas parallel2.cpp -o parallel2
+  640  time ./parallel2 0.000001 128 1000000
+  641  time ./parallel2 0.000001 256 1000000
+  642  time ./parallel2 0.000001 512 1000000
+  643  time ./parallel2 0.000001 1024 1000000
+  644  history > parhist.txt
