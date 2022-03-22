@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stdlib.h>
-#include "/opt/nvidia/hpc_sdk/Linux_x86_64/21.11/math_libs/11.5/targets/x86_64-linux/include/cublas_v2.h"
-#include </opt/nvidia/hpc_sdk/Linux_x86_64/21.11/cuda/11.0/targets/x86_64-linux/include/cuda_runtime.h>
+#include "cublas_v2.h"
+#include <cuda_runtime.h>
 
 using namespace std;
 
