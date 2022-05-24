@@ -44,9 +44,6 @@ int main(int argc, char *argv[]){
     int size = strtol(argv[2], NULL, 10);
     int iters = strtol(argv[3], NULL, 10);
 
-    int Csize;
-    cudaMemcpy(&Csize, &size, sizeof(int), cudaMemcpyHostToDevice);
-
     double Q11 = 10.;
     double Q12 = 20.;
     double Q21 = 20.;
@@ -105,7 +102,7 @@ int main(int argc, char *argv[]){
         compute<<<GS,BS>>>(CA, CAnew, size);
 
         // getting error every 100 iterations
-        if (iter % 100 == 0){
+        if ((iter % 100 == 0) || (iter == 2)){
             err = 0;
 
             Max_Reduction<<<GS,BS>>>(CAnew, CA, size, CBlockErr);
@@ -125,6 +122,8 @@ int main(int argc, char *argv[]){
 
 	cudaFree(CA);
 	cudaFree(CAnew);
+    cudaFree(CBlockErr);
+    cudaDeviceReset();
     return 0;
 }
 
@@ -148,7 +147,7 @@ int main(int argc, char *argv[]){
 +---------------+------+-------+--------+-------+
 | CuBLAS        | 0.9s | 2.4 s | 11.5s  | 1m37s |
 +---------------+------+-------+--------+-------+
-| CUDA          | 4.3s | 4.7 s | 9.0s   | 54.8s |
+| CUDA          | 0.28s| 0.75s | 5.0s   | 51.1s |
 +---------------+------+-------+--------+-------+
 
 */
