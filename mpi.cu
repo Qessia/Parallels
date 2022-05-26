@@ -8,10 +8,12 @@
 
 using namespace std;
 
+// checking errors with cuda operations
 #define CUDACHKERR(cudaErr) if (cudaErr != cudaSuccess) { \
     cerr << "Failed (error code " << cudaGetErrorString(cudaErr) << ")!" << endl; \
     exit(EXIT_FAILURE); \
 }
+
 
 void setDevice(int rank){
     cudaError_t cudaErr;
@@ -127,8 +129,8 @@ int main(int argc, char *argv[]){
     int start, end; // start & end !element! indices
     getArrayBoundaries(&start, &end, rank, size, numRanks);
 
-    int numElems = end - start;
-    int numRows = numElems / size;
+    int numElems = end - start; // amount of elements at current rank
+    int numRows = numElems / size; // amount of rows at current rank
 
     // interpolation for different processes
     double* tmp = (double*)calloc(numElems, sizeof(double));
@@ -147,6 +149,7 @@ int main(int argc, char *argv[]){
     double* Anew_d = getSetMatrix(tmp, numElems, size);
     free(tmp);
 
+    // BS, GS for compute
     dim3 GS = dim3(16, 16);
     dim3 BS = dim3(ceil(size / (double)GS.x), ceil((numRows + 2) / (double)GS.y));
 
@@ -165,10 +168,11 @@ int main(int argc, char *argv[]){
     int topProcess = rank != numRanks - 1 ? rank + 1 : 0;
     int bottomProcess = rank != 0 ? rank - 1 : numRanks - 1;
 
-    // calculating rows indices (not including edge strings) according to rank
+    // calculating start & end rows indices for compute
     int y_start = rank == 0 ? 1 : 0;
     int y_end = rank == numRanks - 1 ? numRows : numRows + 1;
 
+    // BS, GS for vecNeg
     int GS_neg = size;
     int BS_neg = ceil(numElems / (double)GS_neg);
 
@@ -215,14 +219,18 @@ int main(int argc, char *argv[]){
         compute<<<BS, GS>>>(Anew_d, A_d, size, y_start, y_end);
 
         if (iter % 100 == 0){
+            // calculating difference of matrices
             vecNeg<<<BS_neg, GS_neg>>>(Anew_d, A_d, tmp_d, size, numElems);
 
+            // calculating device-wide max reduction
             cudaErr = cub::DeviceReduce::Max(d_temp_storage, temp_storage_bytes, tmp_d, max_d, numRows * size);
             CUDACHKERR(cudaErr);
 
+            // moving max to host
             cudaErr = cudaMemcpy(&max, max_d, sizeof(double), cudaMemcpyDeviceToHost);
             CUDACHKERR(cudaErr);
 
+            // calculating max among all ranks
             MPI_Allreduce(&max, &error, 1, MPI_DOUBLE, MPI_MAX, MPI_COMM_WORLD);
 
             if (rank == 0)
@@ -244,6 +252,29 @@ int main(int argc, char *argv[]){
     return 0;
 }
 
-// почему число итераций меняется в зависимости от числа ранков
-// как между собой общаются первый и последний ранк
-// 
+// Computations result:
+
+/*
+
+
++===============+======+=======+========+=======+
+|       N       | 128  |  256  |  512   | 1024  |
++===============+======+=======+========+=======+
+| GPU           | 1.3s | 4s    | 15.16s | 1m42s |
++---------------+------+-------+--------+-------+
+| CPU           | 5.5s | 1m13s |        |       |
++---------------+------+-------+--------+-------+
+| GPU optimized | 0.4s | 0.9s  | 3.9s   | 52s   |
++---------------+------+-------+--------+-------+
+| CPU optimized | 4.4s | 1m    |        |       |
++---------------+------+-------+--------+-------+
+| CPU Multicore | 2.3s | 14.8s | 2m21s  |       |
++---------------+------+-------+--------+-------+
+| CuBLAS        | 0.9s | 2.4 s | 11.5s  | 1m37s |
++---------------+------+-------+--------+-------+
+| CUDA          | 0.28s| 0.75s | 5.0s   | 51.1s |
++---------------+------+-------+--------+-------+
+| MPI (4 Ranks) | 2s   | 5.6s  | 16.5s  | 54.2s |
++---------------+------+-------+--------+-------+
+
+*/
